@@ -9,6 +9,7 @@
 
 class CashRegister:
 
+
   def __init__(self, discount = 0):
     self.discount = discount
     self.total = 0
@@ -18,6 +19,7 @@ class CashRegister:
 
   def add_item(self, item , price, quantity = 1):
     cart = price * quantity
+    self.cart = cart
     newtotal = cart + self.total
     self.total = newtotal
     for _ in range(quantity):
@@ -36,5 +38,5 @@ class CashRegister:
 
 
   def void_last_transaction(self):
-    new_total = self.total - self.items.pop()
+    new_total = self.total - self.cart 
     self.total =  new_total 
